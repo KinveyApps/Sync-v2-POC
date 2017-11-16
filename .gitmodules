@@ -1,0 +1,3 @@
+[submodule "Kinvey-SDK"]
+	path = Kinvey-SDK
+	url = https://github.com/Kinvey/swift-sdk.git
