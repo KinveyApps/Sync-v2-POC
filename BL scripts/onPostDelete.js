@@ -3,7 +3,7 @@ function onPostDelete(request, response, modules) {
   var Promises = modules.bluebird;
   var logger = modules.logger;
   var recordsDeleted = modules.utils.tempObjectStore.get('recordsDeleted');
-  var collection = collectionAccess.collection('Book-deleted');
+  var collection = collectionAccess.collection(request.collectionName + '-deleted');
   var savePromises = [];
   recordsDeleted.forEach(function(recordDeleted) {
     recordDeleted.originalId = recordDeleted._id;
