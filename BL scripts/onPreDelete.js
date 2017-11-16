@@ -1,7 +1,7 @@
 function onPreDelete(request, response, modules){
   var logger = modules.logger;
   var collectionAccess = modules.collectionAccess;
-  var collection = collectionAccess.collection('Book');
+  var collection = collectionAccess.collection(request.collectionName);
   if (request.entityId) {
     collection.findOne({ _id : collection.objectID(request.entityId) }, function (err, doc) {
       if (err) {
