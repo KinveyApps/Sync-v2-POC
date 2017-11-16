@@ -8,7 +8,7 @@ function onPostDelete(request, response, modules) {
   recordsDeleted.forEach(function(recordDeleted) {
     recordDeleted.originalId = recordDeleted._id;
     delete recordDeleted._id;
-		delete recordDeleted._kmd;
+    delete recordDeleted._kmd;
     savePromises.push(collection.saveAsync(modules.kinvey.entity(recordDeleted)));
   });
   Promises.all(savePromises).then(function() {
